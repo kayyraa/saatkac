@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Date</title>
+        <link rel="icon" href="https://static-00.iconduck.com/assets.00/clock-icon-2048x2048-org46qq3.png">
+        <style>
+            @font-face {
+                font-family: "Intel";
+                src: url("intel.ttf");
+            }
+
+            body {
+                background-color: rgb(50, 50, 50);
+            }
+
+            #date {
+                position: fixed;
+                left: 37.5%;
+                color: white;
+                top: 26%;
+                font-family: "Intel";
+                font-weight: 900;
+                font-size: 64px;
+            }
+
+            #clock {
+                position: fixed;
+                left: 30%;
+                color: white;
+                top: 31%;
+                font-family: "Intel";
+                font-weight: 900;
+                font-size: 148px;
+            }
+        </style>
+    </head>
+    <body>
+        <span id="date">DD.MM.YYYY</span>
+        <span id="clock">HH:MM:SS</span>
+    </body>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const date = document.getElementById("date");
+            const clock = document.getElementById("clock");
+
+            function refresh() {
+                const now = new Date();
+                let seconds = now.getSeconds();
+                let minutes = now.getMinutes();
+                let hours = now.getHours();
+                let day = now.getDate();
+                let month = now.getMonth() + 1;
+                let year = now.getFullYear();
+
+                let current_time = date_night(hours, 17);
+
+                if (current_time == "night") {
+                    color("white", "rgb(50, 50, 50)");
+                } else if (current_time == "day") {
+                    color("black", "white");
+                }
+
+                if (seconds < 10) {
+                    seconds = "0" + seconds;
+                }
+                if (minutes < 10) {
+                    minutes = "0" + minutes;
+                }
+                if (hours < 10) {
+                    hours = "0" + hours;
+                }
+                if (day < 10) {
+                    day = "0" + day;
+                }
+                if (month < 10) {
+                    month = "0" + month;
+                }
+
+                clock.innerHTML = `${hours}:${minutes}:${seconds}`;
+                date.innerHTML = `${day}.${month}.${year}`;
+            }
+
+            function date_night(hour, set) {
+                x = set
+                if (hour < x) {
+                    return "day"
+                } else if (hour > x) {
+                    return "night"
+                }
+            }
+
+            function color(color, bg_color) {
+                date.style.color = color;
+                clock.style.color = color;
+                document.body.style.backgroundColor = bg_color;
+            }
+
+            refresh();
+            setInterval(refresh, 500);
+        });
+    </script>
+</html>
