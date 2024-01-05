@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Saat</title>
+    <link rel="icon" href="icon.png">
+    <style>
+        @font-face {
+            font-family: "Intel";
+            src: url("intel.ttf");
+        }
+
+        body {
+            background-color: rgb(50, 50, 50);
+            color: white;
+            font-family: "Intel";
+        }
+
+        #date, #clock {
+            position: fixed;
+            color: white;
+            font-weight: 900;
+        }
+
+        #date {
+            left: 37.5%;
+            top: 26%;
+            font-size: 64px;
+        }
+
+        #clock {
+            text-wrap: nowrap;
+            left: 30.5%;
+            top: 31%;
+            font-size: 148px;
+        }
+
+        #theme {
+            border-radius: 8px;
+            font-family: "intel";
+            font-size: 20px;
+            position: fixed;
+            top: 94.5%;
+            text-wrap: nowrap;
+            right: 81.5%;
+            width: 280px;
+            height: 32px;
+            background-color: #fff;
+            color: #000;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <span id="date">DD.MM.YYYY</span>
+    <span id="clock">HH:MM:SS</span>
+    <button id="theme">Tema: Açık</button>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const date = document.getElementById("date");
+            const clock = document.getElementById("clock");
+            const theme = document.getElementById("theme");
+
+            let currentTheme = "dark";
+
+            function refresh() {
+                const now = new Date();
+                let seconds = now.getSeconds();
+                let minutes = now.getMinutes();
+                let hours = now.getHours();
+                let day = now.getDate();
+                let month = now.getMonth() + 1;
+                let year = now.getFullYear();
+
+                if (hours < 10) {
+                    hours = "0" + hours;
+                }
+                if (minutes < 10) {
+                    minutes = "0" + minutes;
+                }
+                if (seconds < 10) {
+                    seconds = "0" + seconds;
+                }
+                if (day < 10) {
+                    day = "0" + day;
+                }
+                if (month < 10) {
+                    month = "0" + month;
+                }
+
+                clock.innerHTML = `${hours}:${minutes}:${seconds}`;
+                date.innerHTML = `${day}.${month}.${year}`;
+            }
+
+            theme.addEventListener("click", function() {
+                if (currentTheme === "dark") {
+                    color("black", "white", "light", "Tema: Karanlık");
+                    theme.style.backgroundColor = "rgb(50, 50, 50)";
+                    theme.style.color = "white";
+                } else {
+                    color("white", "rgb(50, 50, 50)", "dark", "Tema: Açık");
+                    theme.style.backgroundColor = "white";
+                    theme.style.color = "rgb(50, 50, 50)";
+                }
+            });
+
+            function color(textColor, bgColor, themeName, buttonText) {
+                date.style.color = textColor;
+                clock.style.color = textColor;
+                document.body.style.backgroundColor = bgColor;
+                currentTheme = themeName;
+                theme.textContent = buttonText;
+            }
+
+            refresh();
+            setInterval(refresh, 250);
+        });
+    </script>
+</body>
+</html>
