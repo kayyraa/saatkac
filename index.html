@@ -52,16 +52,6 @@
             width: 100%;
         }
 
-        #ad {
-            font-size: 32px;
-            transition: color 0.25s ease;
-        }
-
-        #ad:hover {
-            color: tan;
-            will-change: scroll-position;
-        }
-
         #theme {
             border-radius: 8px;
             font-family: "Intel";
@@ -91,7 +81,6 @@
             const date = document.getElementById("date");
             const clock = document.getElementById("clock");
             const theme = document.getElementById("theme");
-            const ad = document.getElementById("ad");
 
             let currentTheme = "dark";
 
@@ -140,7 +129,6 @@
                 date.style.color = textColor;
                 clock.style.color = textColor;
                 document.body.style.backgroundColor = bgColor;
-                ad.style.color = textColor;
                 currentTheme = themeName;
                 theme.textContent = buttonText;
             }
