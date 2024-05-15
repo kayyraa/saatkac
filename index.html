@@ -9,11 +9,6 @@
             src: url("intel.ttf");
         }
 
-        a {
-            color: white;
-            text-decoration: none;
-        }
-
         body {
             background-color: rgb(50, 50, 50);
             color: white;
@@ -27,26 +22,35 @@
         }
 
         #date {
-            position: fixed;
-            left: 37.5%;
-            top: 26%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin: 0 auto;
+            width: 100%;
             font-size: 64px;
             transition: color 1s ease;
         }
 
         #clock {
-            position: fixed;
             text-wrap: nowrap;
-            top: 31%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin: 0 auto;
+            width: 100%;
             font-size: 148px;
-            width: auto;
             transition: color 1s ease;
         }
 
         #clock-container {
-            position: fixed;
-            top: 31%;
-            left: 31%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin: 0 auto;
+            width: 100%;
         }
 
         #ad {
@@ -78,7 +82,6 @@
 </head>
 <body>
     <span id="date">DD.MM.YYYY</span>
-    <span><a id="ad" href="https://cmsaat.vercel.app">cmsaat.vercel.app</a></span>
     <button id="theme">Tema: Aydınlık</button>
     <div id="clock-container">
         <span id="clock">HH:MM:SS</span>
