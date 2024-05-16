@@ -1,0 +1,108 @@
+@font-face {
+    font-family: "Intel";
+    src: url("intel.ttf");
+}
+
+body {
+    background-color: rgb(50, 50, 50);
+    color: white;
+    font-family: "Intel";
+    overflow: hidden;
+    transition: color .25s ease, background-color .25s ease;
+}
+
+#date, #clock {
+    font-weight: 900;
+}
+
+#date {
+    position: relative;
+    top: 140px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 100%;
+    font-size: 64px;
+    transition: color 1s ease;
+}
+
+#clock {
+    text-wrap: nowrap;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 100%;
+    font-size: 148px;
+    transition: color 1s ease;
+}
+
+#clock-container {
+    position: relative;
+    top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.buttons {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 100%;
+    font-size: 20px;
+}
+
+.buttons > button {
+    border-radius: 8px;
+    font-family: "Intel";
+    font-size: 20px;
+    text-wrap: nowrap;
+    width: 280px;
+    height: 32px;
+    background-color: #fff;
+    color: #000;
+    border: none;
+    cursor: pointer;
+    transition: color .25s ease, background-color .25s ease;
+}
+
+.analog-clock {
+    position: fixed;
+    top: 5%;
+    left: 33%;
+    opacity: 0;
+    transition: opacity .25s ease;
+}
+
+.digital-clock {
+    opacity: 1;
+    transform: opacity 0.25s ease;
+}
+
+.second-hand, .minute-hand, .hour-hand {
+    background-color: white;
+    position: fixed;
+    margin-left: 251px;
+    height: 256px;
+    width: 12.5px;
+    transition: rotate 0.5s ease;
+    transform-origin: bottom center;
+}
+
+.background {
+    background-color: rgb(40, 40, 40);
+    width: 512px;
+    height: 512px;
+    border-radius: 100%;
+}
