@@ -30,6 +30,7 @@ body {
 
 #clock {
     text-wrap: nowrap;
+    letter-spacing: 2px;
     display: flex;
     justify-content: center;
     align-items: center;
