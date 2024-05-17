@@ -30,8 +30,10 @@ body {
 
 #clock {
     text-wrap: nowrap;
-    letter-spacing: 2px;
+    letter-spacing: 5px;
+    white-space: nowrap;
     display: flex;
+    flex-shrink: 0;
     justify-content: center;
     align-items: center;
     flex-direction: column;
