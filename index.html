@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Clock</title>
+        <link rel="stylesheet" href="scripts/style.css">
+        <link rel="shortcut icon" href="https://blogger.googleusercontent.com/img/a/AVvXsEhNI7S4-jfq_O-KmtbQvoARaAtqeRAfF-FFpgPfDXDYKKgsYqKr6Vhs0H1nR6UAU13VXtRUHVRnlPJ4jqnP77zsZD7i4Kp_8YJJGTbzD2GNrA-fBGpodI6DqYv984R-pB2zXTEgKikZsY5Fbq0gTnNkGlJ53OM7csKviVELim4OKecAUZeAPJPFiJh5zzo" type="image/x-icon">
+        <script defer src="scripts/index.js"></script>
+    </head>
+    <body>
+        <span class="Date">DD.MM.YYYY</span>
+        <div class="Buttons">
+            <span class="AnnualUpdateLabel">AU~~~~~~~</span>
+            <button class="Theme">Theme: Light</button>
+            <button class="Mode">Mode: </button>
+        </div>
+        <div class="AnalogClock">
+            <div class="Background">
+                <div class="SecondHand"></div>
+                <div class="MinuteHand"></div>
+                <div class="HourHand"></div>
+            </div>
+        </div>
+        <div class="DigitalClock">
+            <div class="ClockContainer">
+                <span class="Clock">HH:MM:SS</span>
+                <div class="TimerSetup">
+                    <input class="Hours" max="23" placeholder="Hours" type="number">
+                    :
+                    <input class="Minutes" max="59" placeholder="Minutes" type="number">
+                    :
+                    <input class="Seconds" max="59" placeholder="Seconds" type="number">
+                </div>
+                <button class="TimerStartStopButton">Start / Stop</button>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+body {
+    background-color: rgb(40, 40, 40);
+    color: white;
+    overflow: hidden;
+}
+
+* {
+    font-family: "Space Mono", monospace !important;
+    transition: all 0.25s ease;
+}
+
+button {
+    font-size: 32px;
+    border: none;
+    border-radius: 100em;
+    padding-left: 2em;
+    padding-right: 2em;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #bebebe;
+}
+
+input {
+    font-size: 16px;
+    border: none;
+    border-radius: 100em;
+    text-align: center;
+}
+
+.TimerSetup {
+    margin-bottom: 1em;
+}
+
+.Date {
+    position: relative;
+    top: 140px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    margin: 0 auto;
+
+    width: 100%;
+    font-size: 64px;
+}
+
+.Clock {
+    text-wrap: nowrap;
+    letter-spacing: 5px;
+    white-space: nowrap;
+
+    display: flex;
+    flex-shrink: 0;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    margin: 0 auto;
+
+    width: 100%;
+    font-size: 148px;
+}
+
+.ClockContainer {
+    position: relative;
+    top: 100px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    margin: 0 auto;
+
+    width: 100%;
+}
+
+.Buttons {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    margin: 0 auto;
+    padding: 8px;
+
+    width: 100%;
+    font-size: 20px;
+}
+
+.Buttons > button {
+    border-radius: 8px;
+
+    font-family: "Intel";
+    font-size: 20px;
+    text-wrap: nowrap;
+
+    width: 14em;
+    height: 32px;
+
+    background-color: #fff;
+    color: #000;
+
+    border: none;
+    cursor: pointer;
+}
+
+.AnalogClock {
+    position: fixed;
+    top: 5%;
+    left: 33%;
+
+    opacity: 0;
+}
+
+.DigitalClock {
+    opacity: 1;
+}
+
+.SecondHand, .MinuteHand, .HourHand {
+    background-color: white;
+
+    position: fixed;
+    margin-left: 251px;
+
+    height: 256px;
+    width: 12.5px;
+
+    transform-origin: bottom center;
+}
+
+.Background {
+    background-color: rgb(40, 40, 40);
+
+    width: 512px;
+    height: 512px;
+
+    border-radius: 100%;
+}
